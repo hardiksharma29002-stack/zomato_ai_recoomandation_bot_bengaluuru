@@ -2,6 +2,7 @@ services:
   - type: web
     name: zomato-ai-backend
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn src.api.router:app --host 0.0.0.1 --port 10000"
     envVars:
