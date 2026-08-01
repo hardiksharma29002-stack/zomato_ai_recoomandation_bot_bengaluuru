@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://zomato-ai-backend.onrender.com/api/$1"
+      "destination": "https://zomato-ai-backend-j5ox.onrender.com/api/$1"
     },
     {
       "source": "/(.*)",
