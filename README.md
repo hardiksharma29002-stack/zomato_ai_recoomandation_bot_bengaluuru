@@ -1,6 +1,9 @@
 # Zomato AI Restaurant Recommendation System
+🚀 **Live Demo:** [https://zomato-ai-recoomandation-bot-bengaluuru.onrender.com/](https://zomato-ai-recoomandation-bot-bengaluuru.onrender.com/)
 
-An AI-powered restaurant recommendation system using the Zomato dataset, React (Vite), FastAPI, and an LLM to provide grounded, personalized restaurant picks based on natural language and hard filter preferences.
+An AI-powered restaurant recommendation system that helps you find your next favorite dining spot. By combining real restaurant data from Zomato with the intelligence of modern Large Language Models (LLMs), this bot analyzes your location, budget, and cuisine preferences to provide highly personalized, human-like restaurant recommendations with detailed explanations of *why* you will love them!
+
+Built with React (Vite) on the frontend and FastAPI on the backend.
 
 ## Quickstart
 
