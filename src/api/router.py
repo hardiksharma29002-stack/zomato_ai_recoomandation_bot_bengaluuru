@@ -36,7 +36,7 @@ async def get_meta():
         df = load_restaurants()
         locations = sorted([loc for loc in df['city'].dropna().unique().tolist() if str(loc).strip() and str(loc).lower() != 'nan'])
         
-        # Extract top 5 cuisines
+        # Extract top 12 cuisines
         cuisine_counts = {}
         for c in df['cuisines'].dropna():
             for cuisine in str(c).split(','):
@@ -44,12 +44,12 @@ async def get_meta():
                 if cleaned and cleaned.lower() not in ['nan', 'unknown', 'none']:
                     cuisine_counts[cleaned] = cuisine_counts.get(cleaned, 0) + 1
         
-        cuisines = [c[0] for c in sorted(cuisine_counts.items(), key=lambda x: x[1], reverse=True)[:5]]
+        cuisines = [c[0] for c in sorted(cuisine_counts.items(), key=lambda x: x[1], reverse=True)[:12]]
         cuisines.insert(0, "Any")
         if not locations:
             locations = ["Banashankari", "Indiranagar", "Koramangala", "BTM", "Jayanagar", "MG Road"]
         if not cuisines:
-            cuisines = ["North Indian", "South Indian", "Chinese", "Italian", "Fast Food", "Cafe", "Desserts"]
+            cuisines = ["North Indian", "Chinese", "South Indian", "Fast Food", "Biryani", "Desserts", "Beverages", "Continental", "Cafe", "Street Food", "Italian", "Bakery"]
 
         return {
             "locations": locations,
@@ -63,7 +63,7 @@ async def get_meta():
         print(f"Error generating meta response: {e}")
         return {
             "locations": ["Banashankari", "Indiranagar", "Koramangala", "BTM", "Jayanagar", "MG Road"],
-            "cuisines": ["North Indian", "South Indian", "Chinese", "Italian", "Fast Food", "Cafe", "Desserts"],
+            "cuisines": ["North Indian", "Chinese", "South Indian", "Fast Food", "Biryani", "Desserts", "Beverages", "Continental", "Cafe", "Street Food", "Italian", "Bakery"],
             "budget": {
                 "low_max": settings.budget.low_max,
                 "medium_max": settings.budget.medium_max

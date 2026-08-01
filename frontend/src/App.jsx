@@ -5,7 +5,7 @@ function App() {
   const [locations, setLocations] = useState([
     "Banashankari", "Indiranagar", "Koramangala", "BTM", "Jayanagar", "MG Road", "Whitefield", "HSR"
   ]);
-  const [cuisines, setCuisines] = useState(["Any", "North Indian", "South Indian", "Chinese", "Italian", "Fast Food"]);
+  const [cuisines, setCuisines] = useState(["Any", "North Indian", "Chinese", "South Indian", "Fast Food", "Biryani", "Desserts", "Beverages", "Continental", "Cafe", "Street Food", "Italian", "Bakery"]);
   const [budgetMeta, setBudgetMeta] = useState({ low_max: 500, medium_max: 1500 });
   const [formData, setFormData] = useState({
     location: 'Banashankari',
