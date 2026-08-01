@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: zomato-ai-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn src.api.router:app --host 0.0.0.1 --port 10000"
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false

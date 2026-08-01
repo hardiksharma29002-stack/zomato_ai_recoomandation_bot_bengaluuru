@@ -6,14 +6,14 @@ from src.models.recommendation import Recommendation, RecommendationResponse
 from src.services.filter import filter_restaurants
 from src.services.prompt import build_recommendation_prompt
 from src.services.llm import LLMClient
-from src.data.preprocessor import get_restaurant_dataframe
+from src.data.loader import load_restaurants
 
 def get_recommendations(prefs: UserPreferences, top_n: int = 5) -> RecommendationResponse:
     """
     Get recommendations based on user preferences.
     Orchestrates filtering, LLM prompting, and validation.
     """
-    df = get_restaurant_dataframe()
+    df = load_restaurants()
     
     candidates_df, suggestions = filter_restaurants(df, prefs)
     

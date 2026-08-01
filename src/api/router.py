@@ -30,10 +30,10 @@ async def recommend(prefs: UserPreferences):
 
 @router.get("/meta")
 async def get_meta():
-    from src.data.preprocessor import get_restaurant_dataframe
+    from src.data.loader import load_restaurants
     from src.config import settings
     try:
-        df = get_restaurant_dataframe()
+        df = load_restaurants()
         locations = sorted([loc for loc in df['city'].dropna().unique().tolist() if str(loc).strip() and str(loc).lower() != 'nan'])
         
         # Extract top 5 cuisines

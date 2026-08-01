@@ -1,7 +1,7 @@
 import argparse
 import sys
 import uvicorn
-from src.data.preprocessor import get_restaurant_dataframe
+from src.data.loader import load_restaurants
 from src.models.preferences import UserPreferences
 from src.services.filter import filter_restaurants
 
@@ -42,7 +42,7 @@ def main():
         sys.exit(1)
         
     print("Loading dataset...")
-    df = get_restaurant_dataframe()
+    df = load_restaurants()
     
     print(f"\nFiltering for: {prefs.location}, {prefs.budget} budget, {prefs.cuisine}, {prefs.min_rating}+ rating")
     filtered_df, suggestions = filter_restaurants(df, prefs)
