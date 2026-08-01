@@ -1,0 +1,35 @@
+:root {
+  --primary: #E23744;
+  --primary-hover: #C52A36;
+  --bg-dark: #121212;
+  --bg-card: rgba(30, 30, 30, 0.7);
+  --text-main: #FFFFFF;
+  --text-muted: #A0A0A0;
+  --border-light: rgba(255, 255, 255, 0.1);
+  --accent-success: #4CAF50;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(226, 55, 68, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(226, 55, 68, 0.12), transparent 25%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
