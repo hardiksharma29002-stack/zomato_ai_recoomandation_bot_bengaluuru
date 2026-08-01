@@ -5,6 +5,12 @@ An AI-powered restaurant recommendation system that helps you find your next fav
 
 Built with React (Vite) on the frontend and FastAPI on the backend.
 
+## 📊 Dataset Information
+The application utilizes a sampled subset (5,000 restaurants) of the comprehensive **Bengaluru Zomato Restaurant Data**. 
+- **Source Data:** Contains crucial features like restaurant names, locations, cuisines, approximate cost for two, and user ratings.
+- **How it works:** The data is cleaned and processed using Pandas. When a user submits their preferences (e.g., location and budget), the system first filters the dataset using Pandas to find realistic matches. The resulting candidate restaurants are then passed into the LLM context window to generate the final personalized recommendations.
+- **Optimization:** To allow for fast, free cloud hosting with limited memory, the data is served via a pre-processed, lightweight CSV subset that loads instantly into memory.
+
 ## Quickstart
 
 ### Prerequisites
